@@ -1,52 +1,74 @@
+import { FacebookIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
-import { FaInstagram, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
-
 
 const Footer = () => {
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  return(
-    <div className="w-full flex justify-between items-center p-6 lg:p-10 bg-white drop-shadow-[0_35px_35px_rgba(0,0,0,0.3)]">
-      {/* <Button asChild variant="ghost" className="ml-[-10px]"><Link href="/">Dentaleaf 2024</Link></Button> */}
-      <div className="flex">
-      <Button asChild 
-        onClick={() => scrollToSection("hero")}
-        variant="ghost" 
-        className="self-center ml-[-10px] cursor-pointer ease-in-out transition active:scale-95 lg:block hidden"
-      >
-        <p className="sacramento-navbar-left lg:text-[40px] mb-[-3px] lg:mb-0">
-          Dentaleaf
-        </p>
-      </Button>
-      <Link href="https://api.whatsapp.com/send?phone=60127710626&text=Hi%20Solah.%20Can%20you%20help%20me%20develop%20a%20website%3F%20I%20would%20like%20to%20know%20more.%20Thanks">
-      <Button asChild 
-        variant="ghost" 
-        className="self-center ml-[-10px] cursor-pointer ease-in-out transition active:scale-95"
-      >
-        <p className="lg:text-[10px] mb-[-3px] lg:mb-0">
-          Developed by Solah
-        </p>
-      </Button>
-      </Link>
+  return (
+    <footer className="bg-green-100 dark:bg-gray-900">
+      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div className="md:flex md:justify-between">
+          <div className="mb-6 md:mb-0">
+            <Image
+              src="/logo-pakmatwestern.png"
+              className="h-auto me-3"
+              alt="PMW Logo"
+              width={100}
+              height={0}
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
+            
+            <div>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                Follow us
+              </h2>
+              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <li className="mb-4">
+                  <Link
+                    href="https://www.facebook.com/pakmatwestern?locale=ms_MY"
+                    className="hover:underline "
+                  >
+                    Facebook
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.instagram.com/pakmatwesterncafe/"
+                    className="hover:underline"
+                  >
+                    Instagram
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                Legal
+              </h2>
+              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <li className="mb-4">
+                  <Link href="/" className="hover:underline">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="hover:underline">
+                    Terms &amp; Conditions
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            © 2024 PMW . All Rights Reserved.
+          </span>
+        </div>
       </div>
-      <div className="flex flex-row gap-2 lg:gap-4 mr-[-16px]">
-        <Button asChild variant="ghost" className="cursor-pointer ease-in-out transition active:scale-95"><Link href="https://api.whatsapp.com/send?phone=60127710626&text=Hi%20klinik%20pergigian%20dentaleaf!"><FaWhatsapp className="w-6 h-6 lg:w-8 lg:h-8" /></Link></Button>
-        <Button asChild variant="ghost" className="cursor-pointer ease-in-out transition active:scale-95"><Link href="tel:+60127710626"><FaPhoneAlt className="w-4 h-4 lg:w-6 lg:h-6" /></Link></Button>
-        <Button asChild variant="ghost" className="cursor-pointer ease-in-out transition active:scale-95"><Link href="https://www.instagram.com/klinikpergigiandentaleaf/"><FaInstagram className="w-6 h-6 lg:w-8 lg:h-8" /></Link></Button>
-      </div>
-
-    </div>
-  )
+    </footer>
+  );
 };
 
 export default Footer;

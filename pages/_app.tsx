@@ -7,7 +7,7 @@ import Head from "next/head";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head><title>Pak Meet Western</title></Head>
+      <Head><title>Pak Mat Western</title></Head>
       {/* <Analytics /> */}
       <Component {...pageProps} />
     </>
